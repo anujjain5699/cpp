@@ -1,0 +1,79 @@
+Passing Reference to a Pointer in C++
+Prerequisite: Pointers vs References in C++.
+For clear understanding, let’s compare the usage of a “pointer to pointer” VS “Reference to pointer” in some cases.
+Note: It is allowed to use “pointer to pointer” in both C and C++, but we can use “Reference to pointer” only in C++.
+
+•	Passing pointer to a function
+
+If a pointer is passed to a function as a parameter and tried to be modified then the changes made to the pointer does not reflects back outside that function. This is because only a copy of the pointer is passed to the function. It can be said that “pass by pointer” is passing a pointer by value. In most cases, this does not present a problem. But the problem comes when you modify the pointer inside the function. Instead of modifying the variable, you are only modifying a copy of the pointer and the original pointer remains unmodified.
+
+
+Below program illustrate this:
+#include <iostream> 
+  
+using namespace std; 
+  
+int global_Var = 42; 
+  
+// function to change pointer value 
+void changePointerValue(int* pp) 
+{ 
+    pp = &global_Var; 
+} 
+  
+int main() 
+{ 
+    int var = 23; 
+    int* ptr_to_var = &var; 
+  
+    cout << "Passing Pointer to function:" << endl; 
+  
+    cout << "Before :" << *ptr_to_var << endl; // display 23 
+  
+    changePointerValue(ptr_to_var); 
+  
+    cout << "After :" << *ptr_to_var << endl; // display 23 
+  
+    return 0; 
+} 
+Output:
+Passing Pointer to function:
+Before :23
+After :23
+
+
+•	Passing “pointer to a pointer” as a parameter to function
+
+The above problem can be resolved by passing the address of the pointer to the function instead of a copy of the actual function. For this, the function parameter should accept a “pointer to pointer” as shown in the below program:
+#include <iostream> 
+  
+using namespace std; 
+  
+int global_var = 42; 
+  
+// function to change pointer to pointer value 
+void changePointerValue(int** ptr_ptr) 
+{ 
+    *ptr_ptr = &global_var; 
+} 
+  
+int main() 
+{ 
+    int var = 23; 
+    int* pointer_to_var = &var; 
+  
+    cout << "Passing a pointer to a pointer to function " << endl; 
+  
+    cout << "Before :" << *pointer_to_var << endl; // display 23 
+  
+    changePointerValue(&pointer_to_var); 
+  
+    cout << "After :" << *pointer_to_var << endl; // display 42 
+  
+    return 0; 
+} 
+Output:
+Passing a pointer to a pointer to function 
+Before :23
+After :42
+
