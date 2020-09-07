@@ -6,7 +6,6 @@ the linked list. This is basically a segregation task to
 be performed on a linked list.We are also not allowed 
 to use any extra space and we need to
 solve it in just O(N) time complexity.
-
 */
 
 
