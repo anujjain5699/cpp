@@ -7,7 +7,6 @@ struct Node
 	struct Node* next; 
 }; 
 
-
 void printList(struct Node* node) 
 { 
 	while (node != NULL) 
