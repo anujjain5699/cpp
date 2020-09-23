@@ -3,3 +3,4 @@
 - Singly LinkedList
 - Doubly LinkedList
 - Circular LinkedList
+- Stack
