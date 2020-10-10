@@ -1,5 +1,7 @@
 *.exe
+/codechef
 *.cpp.bin
 *.prob
 exe
 /.vscode/
+tempCodeRunnerFile.cpp
