@@ -1,6 +1,5 @@
 # C++
-## Implementation of Data Structure in C++. 
-- Singly LinkedList
-- Doubly LinkedList
-- Circular LinkedList
+## Implementation of Data Structures in C++. 
+- LinkedList
 - Stack
+- Tree
