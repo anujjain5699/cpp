@@ -3,5 +3,5 @@
 *.cpp.bin
 *.prob
 exe
-/.vscode/
+.vscode/
 tempCodeRunnerFile.cpp
